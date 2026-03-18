@@ -1,0 +1,23 @@
+# Ambiente e segredos
+.env
+
+# Python cache/bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ambientes virtuais
+.venv/
+venv/
+env/
+
+# Ferramentas e testes
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# IDE/OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
