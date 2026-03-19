@@ -91,7 +91,14 @@ def configure_model() -> genai.GenerativeModel:
     """Configura Gemini usando variável de ambiente e retorna modelo."""
     env_path = Path(__file__).resolve().parent / ".env"
     load_dotenv(dotenv_path=env_path, override=True)
-    api_key = (os.getenv("GEMINI_API_KEY") or "").strip().strip('"').strip("'")
+
+    secret_key = ""
+    try:
+        secret_key = str(st.secrets.get("GEMINI_API_KEY", ""))
+    except Exception:
+        secret_key = ""
+
+    api_key = (secret_key or os.getenv("GEMINI_API_KEY") or "").strip().strip('"').strip("'")
 
     if not api_key:
         raise RuntimeError(
