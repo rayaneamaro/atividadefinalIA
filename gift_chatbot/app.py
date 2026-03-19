@@ -232,8 +232,8 @@ def main() -> None:
     st.caption(f"Modelo Gemini em uso: {selected_model}")
 
     mode = st.radio(
-        "How would you like to interact?",
-        ["1 - Answer questions step by step", "2 - Write everything in one message"],
+        "Como você gostaria de interagir?",
+        ["1 - Responder perguntas passo a passo", "2 - Escrever tudo em uma única mensagem"],
     )
 
     if mode.startswith("1"):
